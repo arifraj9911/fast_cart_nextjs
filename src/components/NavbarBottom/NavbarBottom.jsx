@@ -11,6 +11,7 @@ import BlogDropdown from "../MenuDropdownComponent/BlogDropdown";
 import PagesDropdwon from "../MenuDropdownComponent/PagesDropdwon";
 import SellerDropdown from "../MenuDropdownComponent/SellerDropdown";
 import MegaDropdown from "../MenuDropdownComponent/MegaDropdown";
+import ProductDropdown from "../MenuDropdownComponent/ProductDropdown";
 
 const menuItem = [
   {
@@ -82,6 +83,7 @@ const NavbarBottom = () => {
   const [pagesDropdown, setPagesDropdown] = useState(false);
   const [sellerDropdown, setSellerDropdown] = useState(false);
   const [menuDropdown, setMenuDropdown] = useState(false);
+  const [productDropdown, setProductDropdown] = useState(false);
   return (
     <div className="flex items-center justify-between py-2">
       {/* category */}
@@ -117,23 +119,7 @@ const NavbarBottom = () => {
       </div>
 
       {/* menu */}
-      <div
-        // onMouseLeave={() => {
-        //   setHomeDropdown(false);
-        //   setShopDropdown(false);
-        // }}
-        className="flex "
-      >
-        {/* {menuItem?.map((menu) => (
-          <Link
-            className="mr-10 text-[16px] font-medium flex items-center gap-2"
-            href={menu.path}
-            key={menu.path}
-          >
-            {menu.title}
-            <IoIosArrowDown className="text-xl" />
-          </Link>
-        ))} */}
+      <div className="flex ">
         <div onMouseLeave={() => setHomeDropdown(false)} className="relative">
           <Link
             onMouseOver={() => setHomeDropdown(true)}
@@ -167,14 +153,33 @@ const NavbarBottom = () => {
           )}
         </div>
 
-        <Link
+        {/* <Link
           className="mr-10 text-[16px] font-medium flex items-center gap-2"
           href={"/"}
           // key={menu.path}
         >
           Product
           <IoIosArrowDown className="text-xl" />
-        </Link>
+        </Link> */}
+        <div
+          onMouseLeave={() => setProductDropdown(false)}
+          className="relative"
+        >
+          <Link
+            onMouseOver={() => setProductDropdown(true)}
+            className="mr-10 text-[16px] font-medium flex items-center gap-2"
+            href={"/"}
+            // key={menu.path}
+          >
+            Product
+            <IoIosArrowDown className="text-xl" />
+          </Link>
+          {productDropdown && (
+            <div className="absolute border  border-[#fefefe] rounded-md -left-96 shadow-md top-8">
+              <ProductDropdown></ProductDropdown>
+            </div>
+          )}
+        </div>
         <div onMouseLeave={() => setMenuDropdown(false)} className="relative">
           <Link
             onMouseOver={() => setMenuDropdown(true)}
