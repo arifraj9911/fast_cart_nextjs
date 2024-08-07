@@ -32,26 +32,27 @@ const NavbarTop = () => {
 
   return (
     <div className="bg-primary text-[#fff] text-sm py-3">
-      <div className="flex justify-between max-w-screen-2xl mx-auto">
+      <div className="flex justify-between items-center max-w-screen-2xl mx-auto">
         <div className="flex items-center font-medium gap-1">
           <CiLocationOn className="" />
           <span>1418 Riverwood Drive, CA 96052, US</span>
         </div>
         <div>
-          <VerticalSlider></VerticalSlider>
+          {/* <VerticalSlider></VerticalSlider> */}
+          <span>Welcome to FastCart.Wrap new offers and gift form fast cart </span>
         </div>
-        <div className="flex gap-6 items-center">
+        <div className="flex gap-4 items-center font-medium">
           {/* for language */}
           <div className="relative">
             <div
               onClick={handleLanguage}
-              className="flex cursor-pointer justify-between items-center gap-4"
+              className="flex cursor-pointer justify-between items-center gap-1"
             >
-              <span className="flex gap-2 items-center">
+              <span className="flex gap-1 items-center">
                 <img src={flagSelect} alt="flag" className="w-8 " />
                 {langSelect}
               </span>
-              <IoIosArrowDown />
+              <IoIosArrowDown className="text-lg" />
             </div>
 
             {toggleLang && (
@@ -75,16 +76,17 @@ const NavbarTop = () => {
               </div>
             )}
           </div>
-
+          <div className="border h-6 border-[#dadada]"></div>
           {/* for currency */}
           <div className="relative">
             <div
               onClick={handleCurrency}
-              className="flex cursor-pointer justify-between items-center gap-4"
+              className="flex cursor-pointer justify-between items-center gap-1"
             >
-              <span className="flex gap-2 items-center">{currency}</span>
-              <IoIosArrowDown />
+              <span className="flex gap-1 items-center">{currency}</span>
+              <IoIosArrowDown className="text-lg" />
             </div>
+
             {/* <div className="border"></div> */}
             {toggleCurrency && (
               <div className="absolute bg-[#fff] right-0 top-[40px] shadow-md border border-[#cdcbcb] p-4 w-20 text-[#000]">
