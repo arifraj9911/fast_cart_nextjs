@@ -39,9 +39,11 @@ const NavbarTop = () => {
         </div>
         <div>
           {/* <VerticalSlider></VerticalSlider> */}
-          <span>Welcome to FastCart.Wrap new offers and gift form fast cart </span>
+          <span>
+            Welcome to FastCart.Wrap new offers and gift form fast cart{" "}
+          </span>
         </div>
-        <div className="flex gap-4 items-center font-medium">
+        <div className="flex gap-4 items-center font-medium z-10">
           {/* for language */}
           <div className="relative">
             <div
